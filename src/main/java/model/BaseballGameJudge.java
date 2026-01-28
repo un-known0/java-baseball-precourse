@@ -13,7 +13,7 @@ public class BaseballGameJudge {
         if(answer.size() != guess.size()) throw new InvalidInputException(INVALID_LENGTH);
     }
 
-    public int countBall(List<Integer> answer, List<Integer> guess) {
+    int countBall(List<Integer> answer, List<Integer> guess) {
         int ball = 0;
         for (int i = 0; i < guess.size(); i++) {
             int num = guess.get(i);
@@ -24,7 +24,7 @@ public class BaseballGameJudge {
         return ball;
     }
 
-    public int countStrike(List<Integer> answer, List<Integer> guess) {
+    int countStrike(List<Integer> answer, List<Integer> guess) {
         int strike = 0;
         for (int i = 0; i < guess.size(); i++) {
             if (answer.get(i).equals(guess.get(i))) {
@@ -35,7 +35,7 @@ public class BaseballGameJudge {
     }
 
     public GameResult judge(List<Integer> answer, List<Integer> guess) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new GameResult(countBall(answer, guess), countStrike(answer, guess));
     }
 
     public boolean isGameOver(GameResult result) {
