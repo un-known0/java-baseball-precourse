@@ -95,7 +95,11 @@
    - 반환값: 없음
    - 결과 문구 출력
 
-2. `printError` - 에러 메시지 출력 함수
+2. `printGameEnd` - 게임 종료 메시지 출력 함수
+   - 매개변수: GameResult 객체
+   - 반환값: 없음
+
+3. `printError` - 에러 메시지 출력 함수
    - 매개변수: exception 객체
    - 반환값: 없음
 

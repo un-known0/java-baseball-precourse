@@ -20,6 +20,10 @@ public class GameResult {
         return strike;
     }
 
+    public int getGoal() {
+        return goal;
+    }
+
     public boolean isGameOver() {
         return goal == strike;
     }
