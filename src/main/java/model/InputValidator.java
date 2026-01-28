@@ -38,6 +38,15 @@ public class InputValidator {
     }
 
     public boolean validateRestartInput(String input) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (input.isEmpty()) {
+            throw new InvalidInputException(INVALID_INPUT_EMPTY);
+        }
+        if (input.equals("1")) {
+            return true;
+        }
+        if (input.equals("2")) {
+            return false;
+        }
+        throw new InvalidInputException(INVALID_RESTART_INPUT);
     }
 }
