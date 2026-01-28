@@ -32,7 +32,11 @@
    - 범위보다 요구 개수가 많아도 오류
 
 #### GameResult (게임 결과 객체)
-- 필드: ball(볼 개수), strike(스트라이크 개수)
+- 필드: goal(목표 개수), ball(볼 개수), strike(스트라이크 개수)
+
+1. `isGameOver` - 게임 종료 여부 판단 함수
+   - 매개변수: 없음
+   - 반환값: boolean
 
 #### BaseballGameJudge (게임 판정)
 1. `validateLength` - 길이 검사 함수
@@ -54,10 +58,6 @@
 4. `judge` - 야구게임 결과 함수
    - 매개변수: 숫자 리스트, 숫자 리스트
    - 반환값: GameResult 객체
-
-5. `isGameOver` - 게임 종료 여부 판단 함수
-   - 매개변수: GameResult 객체
-   - 반환값: boolean
 
 #### InputValidator (입력 검증)
 1. `parseToNumbers` - 문자열을 숫자 리스트로 파싱하는 함수
