@@ -1,8 +1,11 @@
 package view;
 
+import model.GameResult;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLOutput;
 
 public class InputView {
 
@@ -26,6 +29,7 @@ public class InputView {
     }
 
     public String readRestartOption() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        return input();
     }
 }
