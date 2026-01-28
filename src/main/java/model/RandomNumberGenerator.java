@@ -1,8 +1,14 @@
 package model;
 
-import java.util.List;
+import java.util.*;
 
 public class RandomNumberGenerator {
+
+    private final Random random;
+
+    public RandomNumberGenerator(){
+        random = new Random();
+    }
 
     public int pickNumber(int start, int end) {
         throw new UnsupportedOperationException("Not implemented yet");
