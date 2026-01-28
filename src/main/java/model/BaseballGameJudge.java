@@ -14,7 +14,14 @@ public class BaseballGameJudge {
     }
 
     public int countBall(List<Integer> answer, List<Integer> guess) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int ball = 0;
+        for (int i = 0; i < guess.size(); i++) {
+            int num = guess.get(i);
+            if (answer.contains(num) && !answer.get(i).equals(num)) {
+                ball++;
+            }
+        }
+        return ball;
     }
 
     public int countStrike(List<Integer> answer, List<Integer> guess) {
