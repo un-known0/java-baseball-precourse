@@ -36,10 +36,7 @@ public class BaseballGameJudge {
 
     public GameResult judge(List<Integer> answer, List<Integer> guess) {
         validateLength(answer, guess);
-        return new GameResult(countBall(answer, guess), countStrike(answer, guess));
+        return new GameResult(answer.size(), countBall(answer, guess), countStrike(answer, guess));
     }
 
-    public boolean isGameOver(GameResult result) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
 }
