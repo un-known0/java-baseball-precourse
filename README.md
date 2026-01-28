@@ -65,9 +65,9 @@
    - 반환값: 숫자 리스트
    - 숫자 외의 문자가 포함되어 있다면 [ERROR]
 
-2. `hasNoDuplicates` - 중복 없는 숫자 리스트인지 검증 함수
+2. `validateNoDuplicates` - 중복 없는 숫자 리스트인지 검증 함수
    - 매개변수: 숫자 리스트
-   - 반환값: boolean
+   - 반환값: 없음
    - 중복이 있으면 [ERROR]
 
 3. `validateRestartInput` - 재시작 입력 검증 함수

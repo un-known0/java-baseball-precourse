@@ -3,7 +3,9 @@ package model;
 import model.exception.InvalidInputException;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static model.exception.InputErrorCode.*;
 
@@ -22,11 +24,17 @@ public class InputValidator {
             numbers.add(c - '0');
         }
 
+        validateNoDuplicates(numbers);
         return numbers;
     }
 
-    public boolean hasNoDuplicates(List<Integer> numbers) {
-        throw new UnsupportedOperationException("Not implemented yet");
+    void validateNoDuplicates(List<Integer> numbers) {
+        Set<Integer> seen = new HashSet<>();
+        for (Integer num : numbers) {
+            if (!seen.add(num)) {
+                throw new InvalidInputException(DUPLICATE_NUMBER);
+            }
+        }
     }
 
     public boolean validateRestartInput(String input) {
