@@ -37,7 +37,7 @@
 #### BaseballGameJudge (게임 판정)
 1. `validateLength` - 길이 검사 함수
    - 매개변수: 숫자 리스트, 숫자 리스트
-   - 반환값: boolean
+   - 반환값: 없음
    - 두 리스트의 길이가 비교에 유효한지 검사
    - 잘못된 값이면 [ERROR]
 
