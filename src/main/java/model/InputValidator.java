@@ -17,7 +17,7 @@ public class InputValidator {
         }
 
         List<Integer> numbers = new ArrayList<>();
-        for (char c : input.toCharArray()) {
+        for (char c : input.trim().toCharArray()) {
             if (!Character.isDigit(c)) {
                 throw new InvalidInputException(INVALID_INPUT_FORMAT);
             }
@@ -41,10 +41,10 @@ public class InputValidator {
         if (input.isEmpty()) {
             throw new InvalidInputException(INVALID_INPUT_EMPTY);
         }
-        if (input.equals("1")) {
+        if (input.trim().equals("1")) {
             return true;
         }
-        if (input.equals("2")) {
+        if (input.trim().equals("2")) {
             return false;
         }
         throw new InvalidInputException(INVALID_RESTART_INPUT);
