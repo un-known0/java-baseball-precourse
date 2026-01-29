@@ -1,14 +1,20 @@
 package controller;
 
 import model.BaseballGameJudge;
+import model.GameResult;
 import model.InputValidator;
 import model.RandomNumberGenerator;
+import model.exception.UserException;
 import view.InputView;
 import view.OutputView;
 
 import java.util.List;
 
 public class GameController {
+
+    private static final int NUMBER_SIZE = 3;
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 9;
 
     private final RandomNumberGenerator randomNumberGenerator;
     private final BaseballGameJudge baseballGameJudge;
@@ -27,14 +33,36 @@ public class GameController {
     }
 
     public void run() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        do{
+            List<Integer> result = randomNumberGenerator.pickUniqueNumbers(MIN_NUMBER, MAX_NUMBER, NUMBER_SIZE);
+//            List<Integer> result = List.of(1,2,3);
+            while(!playRound(result)){
+            }
+            outputView.printGameEnd(NUMBER_SIZE);
+        }while(handleRestart());
     }
 
     public boolean playRound(List<Integer> answer) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        try{
+            String input = inputView.readNumber();
+            List<Integer> inputList = inputValidator.parseToNumbers(input);
+            GameResult judge = baseballGameJudge.judge(answer, inputList);
+            outputView.printResult(judge);
+            return judge.isGameOver(NUMBER_SIZE);
+        }catch(UserException e){
+            outputView.printError(e);
+        }
+        return false;
     }
 
     public boolean handleRestart() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        while(true){
+            try{
+                String s = inputView.readRestartOption();
+                return inputValidator.validateRestartInput(s);
+            }catch(UserException e){
+                outputView.printError(e);
+            }
+        }
     }
 }
