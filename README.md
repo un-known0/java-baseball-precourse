@@ -32,10 +32,10 @@
    - 범위보다 요구 개수가 많아도 오류
 
 #### GameResult (게임 결과 객체)
-- 필드: goal(목표 개수), ball(볼 개수), strike(스트라이크 개수)
+- 필드: ball(볼 개수), strike(스트라이크 개수)
 
 1. `isGameOver` - 게임 종료 여부 판단 함수
-   - 매개변수: 없음
+   - 매개변수: 목표 개수
    - 반환값: boolean
 
 #### BaseballGameJudge (게임 판정)
@@ -96,7 +96,7 @@
    - 결과 문구 출력
 
 2. `printGameEnd` - 게임 종료 메시지 출력 함수
-   - 매개변수: GameResult 객체
+   - 매개변수: 목표 개수
    - 반환값: 없음
 
 3. `printError` - 에러 메시지 출력 함수

@@ -2,12 +2,10 @@ package model;
 
 public class GameResult {
 
-    private int goal;
     private int ball;
     private int strike;
 
-    public GameResult(int goal, int ball, int strike) {
-        this.goal = goal;
+    public GameResult(int ball, int strike) {
         this.ball = ball;
         this.strike = strike;
     }
@@ -20,12 +18,8 @@ public class GameResult {
         return strike;
     }
 
-    public int getGoal() {
-        return goal;
-    }
-
-    public boolean isGameOver() {
-        return goal == strike;
+    public boolean isGameOver(int numberSize) {
+        return numberSize == strike;
     }
 
 }

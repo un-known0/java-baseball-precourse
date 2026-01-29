@@ -21,8 +21,8 @@ public class OutputView {
         System.out.println(formatResult(result));
     }
 
-    public void printGameEnd(GameResult result){
-        System.out.println(result.getGoal() + "개의 숫자를 모두 맞히셨습니다! 게임 끝");
+    public void printGameEnd(int numberSize){
+        System.out.println(numberSize + "개의 숫자를 모두 맞히셨습니다! 게임 끝");
     }
 
     public void printError(UserException e) {
