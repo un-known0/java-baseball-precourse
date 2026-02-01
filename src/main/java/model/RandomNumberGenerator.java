@@ -17,7 +17,7 @@ public class RandomNumberGenerator {
 
     public List<Integer> pickUniqueNumbers(int start, int end, int count) {
         if(end-start+1 < count) throw new IllegalArgumentException("원하는 개수의 숫자를 뽑을 수 없습니다");
-        if(count<0) throw new IllegalArgumentException("0개 이하의 숫자를 뽑을 수 없습니다.");
+        if(count<0) throw new IllegalArgumentException("0개 미만의 숫자를 뽑을 수 없습니다.");
         List<Integer> list = new ArrayList<>();
         Set<Integer> picks = new HashSet<>();
 
