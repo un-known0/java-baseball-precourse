@@ -14,6 +14,7 @@ public class InputView {
 
     String input(){
         try{
+            System.out.flush();
             return br.readLine();
         } catch (IOException e) {
             throw new RuntimeException(e);
