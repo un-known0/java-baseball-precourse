@@ -12,7 +12,7 @@ import static model.exception.InputErrorCode.*;
 public class InputValidator {
 
     public List<Integer> parseToNumbers(String input) {
-        if (input.isEmpty()) {
+        if (input.trim().isEmpty()) {
             throw new InvalidInputException(INVALID_INPUT_EMPTY);
         }
 
