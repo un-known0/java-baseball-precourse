@@ -9,10 +9,6 @@ import static model.exception.InputErrorCode.*;
 
 public class BaseballGameJudge {
 
-    void validateLength(List<Integer> answer, List<Integer> guess) {
-        if(answer.size() != guess.size()) throw new InvalidInputException(INVALID_LENGTH);
-    }
-
     int countBall(List<Integer> answer, List<Integer> guess) {
         int ball = 0;
         for (int i = 0; i < guess.size(); i++) {
@@ -35,7 +31,6 @@ public class BaseballGameJudge {
     }
 
     public GameResult judge(List<Integer> answer, List<Integer> guess) {
-        validateLength(answer, guess);
         return new GameResult(countBall(answer, guess), countStrike(answer, guess));
     }
 

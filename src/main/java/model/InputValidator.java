@@ -11,8 +11,8 @@ import static model.exception.InputErrorCode.*;
 
 public class InputValidator {
 
-    public List<Integer> parseToNumbers(String input) {
-        if (input.trim().isEmpty()) {
+    public List<Integer> parseToNumbers(String input, int min, int max, int size) {
+        if (input == null || input.trim().isEmpty()) {
             throw new InvalidInputException(INVALID_INPUT_EMPTY);
         }
 
@@ -24,8 +24,26 @@ public class InputValidator {
             numbers.add(c - '0');
         }
 
-        validateNoDuplicates(numbers);
+        validateInput(numbers, min, max, size);
         return numbers;
+    }
+
+    void validateInput(List<Integer> numbers, int min, int max, int size){
+        validateRange(numbers, min, max);
+        validateNoDuplicates(numbers);
+        validateLength(numbers, size);
+    }
+
+    void validateLength(List<Integer> numbers, int size) {
+        if(numbers.size() != size) throw new InvalidInputException(INVALID_LENGTH);
+    }
+
+    void validateRange(List<Integer> numbers, int min, int max) {
+        for (Integer num : numbers) {
+            if (num < min || num > max) {
+                throw new InvalidInputException(INVALID_NUMBER_RANGE);
+            }
+        }
     }
 
     void validateNoDuplicates(List<Integer> numbers) {

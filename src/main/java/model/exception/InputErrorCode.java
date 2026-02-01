@@ -7,6 +7,9 @@ public enum InputErrorCode {
     INVALID_INPUT_EMPTY("입력값이 비어있습니다."),
     INVALID_RESTART_INPUT("1 또는 2만 입력할 수 있습니다."),
 
+    // 범위 관련
+    INVALID_NUMBER_RANGE("범위를 벗어난 숫자가 있습니다."),
+
     // 중복 관련
     DUPLICATE_NUMBER("중복된 숫자가 있습니다."),
 

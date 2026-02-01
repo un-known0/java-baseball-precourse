@@ -45,7 +45,7 @@ public class GameController {
     public boolean playRound(List<Integer> answer) {
         try{
             String input = inputView.readNumber();
-            List<Integer> inputList = inputValidator.parseToNumbers(input);
+            List<Integer> inputList = inputValidator.parseToNumbers(input, MIN_NUMBER, MAX_NUMBER, NUMBER_SIZE);
             GameResult judge = baseballGameJudge.judge(answer, inputList);
             outputView.printResult(judge);
             return judge.isGameOver(NUMBER_SIZE);
